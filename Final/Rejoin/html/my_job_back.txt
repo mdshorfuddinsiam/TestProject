@@ -1,0 +1,781 @@
+@extends('layouts.dashboard')
+@section('title',"My Jobs")
+@section('breadcrumb',"My Jobs")
+@section('my_jobs',"active")
+@section('styles')
+<!-- Custom scroll bar css-->
+<link href="{{asset('frontend')}}/assets/plugins/pscrollbar/pscrollbar.css" rel="stylesheet" />
+@endsection
+
+{{-- {{ dd($jobs) }} --}}
+
+
+@section('dashboard_content')
+<div class="col-xl-9 col-lg-12 col-md-12">
+	<div class="card mb-0">
+		<div class="card-header">
+			<h3 class="card-title">My Ads</h3>
+		</div>
+		<div class="card-body">
+			<div class="ads-tabs">
+				<div class="tabs-menus">
+					<!-- Tabs -->
+					<ul class="nav panel-tabs">
+						<li class=""><a href="#tab1" class="active" data-bs-toggle="tab">All Ads (20)</a></li>
+						<li><a href="#tab2" data-bs-toggle="tab">Published (08)</a></li>
+						<li><a href="#tab3" data-bs-toggle="tab">Featured (05)</a></li>
+						<li><a href="#tab4" data-bs-toggle="tab">Sold (03)</a></li>
+						<li><a href="#tab5" data-bs-toggle="tab">Active (03)</a></li>
+						<li><a href="#tab6" data-bs-toggle="tab">Expired (01)</a></li>
+					</ul>
+				</div>
+				<div class="tab-content">
+
+
+					<div class="tab-pane active table-responsive border-top userprof-tab" id="tab1">
+						<table class="table table-bordered table-hover mb-0 text-nowrap">
+							<thead>
+								<tr>
+									<th></th>
+									<th class="w-100">Latest Jobs</th>
+									<th>Location</th>
+									<th>Salary</th>
+									<th>Ad Status</th>
+									<th >Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								@forelse($jobs as $job)
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">BPO Jobs</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Feb-21-2018 , 16:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i>Ambrosia</td>
+									<td class="font-weight-semibold fs-16">$54 - $60</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								@empty
+								@endforelse
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tab-pane  table-responsive border-top userprof-tab" id="tab2">
+						<table class="table table-bordered table-hover mb-0 text-nowrap">
+							<thead>
+								<tr>
+									<th></th>
+									<th class="w-100">Latest Jobs</th>
+									<th>Location</th>
+									<th>Salary</th>
+									<th>Ad Status</th>
+									<th >Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">BPO Jobs</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Feb-21-2018 , 16:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i>Ambrosia</td>
+									<td class="font-weight-semibold fs-16">$54 - $60</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Computer Operator</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Oct-23-2018 , 9:18</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Aldovia</td>
+									<td class="font-weight-semibold fs-16">$15 - $25</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">IT/Hardware</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i> Dec-15-2018 , 12:45 pm</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i>  Full Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Kraplakistan</td>
+									<td class="font-weight-semibold fs-16">$22 - $30</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Teachers/Lecturers</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Dec-03-2018 , 16:45</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i>  Full Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Estoccia</td>
+									<td class="font-weight-semibold fs-16">$35 - $50</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Web Developer</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-20-2018 , 16:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Eurasia</td>
+									<td class="font-weight-semibold fs-16">$12 - $30</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Driver</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Sep-22-2018 , 9:18 </a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i>Drusselstein</td>
+									<td class="font-weight-semibold fs-16">$23 - $40</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Cook/Chef</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Dec-21-2018 , 19:45</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Full Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i>Deltora</td>
+									<td class="font-weight-semibold fs-16 ">$76 - $80</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Marketing</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-25-2018 , 16:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i>Bozatta</td>
+									<td class="font-weight-semibold fs-16">$89 - $90</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-warning">Published</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="tab-pane  table-responsive border-top userprof-tab" id="tab3">
+						<table class="table table-bordered table-hover  text-nowrap mb-0">
+							<thead>
+								<tr>
+									<th></th>
+									<th class="w-100">Latest Jobs</th>
+									<th>Location</th>
+									<th>Salary</th>
+									<th>Ad Status</th>
+									<th >Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Admin</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-15-2019 , 12:45</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Full Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Gondal</td>
+									<td class="font-weight-semibold fs-16">$22 - $34</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-primary">featured</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Customer Support</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-22-2018 , 9:18</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Holy Alliance</td>
+									<td class="font-weight-semibold fs-16">$14 - $20</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-primary">featured</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Data Entry</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-12-2018 , 16:50</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i>  Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Carovia</td>
+									<td class="font-weight-semibold fs-16">$35 - $40</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-primary">featured</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">HR Recruiter</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-15-2019 , 08:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Bandrinka</td>
+									<td class="font-weight-semibold fs-16">$89 - $90</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-primary">featured</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Receptionist</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-14-2018 , 19:18</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Antegria</td>
+									<td class="font-weight-semibold fs-16">$14- $50</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-primary">featured</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="tab-pane  table-responsive border-top userprof-tab" id="tab4">
+						<table class="table table-bordered table-hover mb-0 text-nowrap">
+							<thead>
+								<tr>
+									<th></th>
+									<th class="w-100">Latest Jobs</th>
+									<th>Location</th>
+									<th>Salary</th>
+									<th>Ad Status</th>
+									<th >Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Marketing</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-25-2018 , 16:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i>Bozatta</td>
+									<td class="font-weight-semibold fs-16">$89 - $90</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-info">Sold</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Nurse</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Feb-21-2018 , 16:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Full Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Livonia</td>
+									<td class="font-weight-semibold fs-16">$25 - $40</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-info">Sold</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">IT Software</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-15-2019 , 12:45 pm</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Full Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Bangistan</td>
+									<td class="font-weight-semibold fs-16">$22 - $34</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-info">Sold</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="tab-pane  table-responsive border-top userprof-tab" id="tab5">
+						<table class="table table-bordered table-hover mb-0 text-nowrap">
+							<thead>
+								<tr>
+									<th></th>
+									<th class="w-100">Latest Jobs</th>
+									<th>Location</th>
+									<th>Salary</th>
+									<th>Ad Status</th>
+									<th >Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Delivery Boys</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-25-2018 , 16:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Maltovia</td>
+									<td class="font-weight-semibold fs-16">$20 - $30</td>
+									<td>
+										<a href="javascript:void(0);" class="badge badge bg-success">Active</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Sales</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-30-2018 , 11:54</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Graustark</td>
+									<td class="font-weight-semibold fs-16">$89 - $90</td>
+									<td>
+										<a href="javascript:void(0);" class="badge badge bg-success">Active</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Web Designer</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-03-2018 , 12:50</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i>  Part Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Edonia</td>
+									<td class="font-weight-semibold fs-16">$35 - $40</td>
+									<td>
+										<a href="javascript:void(0);" class="badge badge bg-success">Active</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tab-pane  table-responsive border-top userprof-tab" id="tab6">
+						<table class="table table-bordered table-hover mb-0 text-nowrap">
+							<thead>
+								<tr>
+									<th></th>
+									<th class="w-100">Latest Jobs</th>
+									<th>Location</th>
+									<th>Salary</th>
+									<th>Ad Status</th>
+									<th >Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label class="custom-control form-checkbox">
+											<input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+											<span class="custom-control-label"></span>
+										</label>
+									</td>
+									<td>
+										<div class="media mt-0 mb-0">
+											<div class="media-body">
+												<div class="card-item-desc p-0">
+													<a href="javascript:void(0);" class="text-dark"><h4 class="font-weight-semibold">Life Insurance</h4></a>
+													<a href="javascript:void(0);"><i class="fa fa-clock-o w-4"></i>  Nov-15-2019 , 12:45</a><br>
+													<a href="javascript:void(0);"><i class="fa fa-tag w-4"></i> Full Time</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><i class ="fa fa-map-marker me-1 text-muted"></i> Fook Island</td>
+									<td class="font-weight-semibold fs-16">$22 - $30</td>
+									<td>
+										<a href="javascript:void(0);" class="badge bg-danger">Expired</a>
+									</td>
+									<td>
+										<a class="btn btn-success btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil"></i></a>
+										<a class="btn btn-danger btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+										<a class="btn btn-info btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="Save to Wishlist"><i class="fa fa-heart-o"></i></a>
+										<a class="btn btn-primary btn-sm text-white" data-bs-toggle="tooltip" data-bs-original-title="View"><i class="fa fa-eye"></i></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@endsection
+
+
+@section('scripts')
+<!-- Count Down-->
+<script src="{{asset('frontend')}}/assets/plugins/count-down/jquery.lwtCountdown-1.0.js"></script>
+<!-- Custom scroll bar Js-->
+<script src="{{asset('frontend')}}/assets/plugins/pscrollbar/pscrollbar.js"></script>
+@endsection
